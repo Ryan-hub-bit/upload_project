@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { v4 } from "uuid";
+
 const Edit = ({ add }) => {
   const [money, setmoney] = useState("");
   const [time, setTime] = useState("");
@@ -7,7 +9,14 @@ const Edit = ({ add }) => {
   }
   function addItem() {
     add(function (prev) {
-      return [...prev, { money, time }];
+      return [
+        ...prev,
+        {
+          id: v4(),
+          money,
+          time,
+        },
+      ];
     });
   }
   function handleChange(event) {

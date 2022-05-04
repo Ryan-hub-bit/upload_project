@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="app">
       <Edit add={addData} />
-      <List listData={data} />
+      <List listData={data} deleteData={addData} />
     </div>
   );
 };
